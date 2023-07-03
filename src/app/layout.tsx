@@ -1,5 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import { CiDumbbell } from 'react-icons/ci'
+import { RxHamburgerMenu } from 'react-icons/rx'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +18,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <nav className="flex justify-between items-center w-[400px] max-[420px]:w-auto m-auto max-[420px]:mx-2 py-1 px-3 my-1">
+          <Link href="/">
+            <ol className="flex justify-around items-center">
+              <h1 className="text-2xl max-sm:text-xl mr-1">FitConnect</h1>
+              <CiDumbbell className="w-10 h-10"/>
+            </ol>
+          </Link>
+          <Link href="/login" className="no-underline hover:underline focus:underline max-sm:text-sm">Login</Link>
+          <p>/</p>
+          <Link href="/register" className="no-underline hover:underline max-sm:text-sm">Register</Link>
+          {/* <RxHamburgerMenu className='w-10 h-10 justify-self-end'/> */}
+        </nav>
+        {children}
+        <p className="absolute bottom-0 right-0 left-0 m-auto mb-2 w-fit">©FitConnect 2023</p>
+      </body>
     </html>
   )
 }
