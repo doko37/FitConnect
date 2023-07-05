@@ -1,4 +1,4 @@
-// src/api/myRoute.ts
+// src/app/api/myRoute.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import mysql, {
   Connection,
